@@ -81,7 +81,7 @@ class TeachersController extends AppController
 
         if ($this->request->is(['patch', 'post', 'put'])) {
             $i = 0;
-            foreach ($this->request->data['knowledgeTeacher']['level'] as $level) {
+            foreach ($this->request->data['level'] as $level) {
                 if ($level == 1 || $level == 2 || $level == 3) {
                     $teacher->knowledges_teachers[$i]->level = $level;
                 }
@@ -211,7 +211,7 @@ class TeachersController extends AppController
 			}
 
             $i = 0;
-			foreach ($this->request->data['knowledgeTeacher']['level'] as $level) {
+			foreach ($this->request->data['level'] as $level) {
 			    if ($level == 1 || $level == 2 || $level == 3) {
                     $teacher->knowledges_teachers[$i]->level = $level;
 			    }

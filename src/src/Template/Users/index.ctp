@@ -19,7 +19,7 @@
             <div class="box-body" <?= !$isFiltered ? 'style="display: none;"' : '' ?>>
                 <div class="row">
                     <div class="col-lg-12 col-sm-12">
-                        <div class="row">
+                        <div class="row" style="display: flex; align-items: center;">
                             <div class="col-sm-3">
                                 <?= $this->Form->input('login', ['label' => __('Login')]) ?>
                             </div>

@@ -239,7 +239,7 @@
                                 <td><?= h($knowledgeTeacher->knowledge->name) ?></td>
 
                                 <?php if(isset($loggedUser->teacher) && $loggedUser->teacher->id == $teacher->id): ?>
-                                    <td><?= $this->Form->input('knowledgeTeacher.level[]', ['default' => $knowledgeTeacher->level, 'label' => false, 'style' => 'width:60px']); ?></td>
+                                    <td><?= $this->Form->input('level[]', ['default' => $knowledgeTeacher->level, 'label' => false, 'style' => 'width:60px']); ?></td>
                                 <?php else: ?>
                                     <td><?= h($knowledgeTeacher->level) ?></td>
                                 <?php endif; ?>

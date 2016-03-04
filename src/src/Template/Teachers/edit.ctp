@@ -80,7 +80,7 @@
                                         <tr>
                                             <td><?= $this->Number->format($knowledgeTeacher->knowledge->id) ?></td>
                                             <td><?= h($knowledgeTeacher->knowledge->name) ?></td>
-                                            <td><?= $this->Form->input('knowledgeTeacher.level[]', ['default' => $knowledgeTeacher->level, 'label' => false, 'style' => 'width:60px']); ?></td>
+                                            <td><?= $this->Form->input('level[]', ['default' => $knowledgeTeacher->level, 'label' => false, 'style' => 'width:60px']); ?></td>
                                             <td>
                                                 <?= $this->Html->link(
                                                     '',
