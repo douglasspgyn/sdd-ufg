@@ -75,7 +75,7 @@
 								</div>
 								<div class="col-xs-3">
 									<?php
-										echo $this->Form->label('start_time');
+										echo $this->Form->label('Horário de Início');
 										echo $this->Form->time('start_time'
 										, ['format' => '24'
 										, 'empty' => false
@@ -90,7 +90,7 @@
 								</div>
 								<div class="col-xs-3">
 									<?php
-										echo $this->Form->label('end_time');
+										echo $this->Form->label('Horário de Término');
 										echo $this->Form->time('end_time'
 										, ['format' => '24'
 										, 'empty' => false
