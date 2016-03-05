@@ -84,7 +84,7 @@
                                             <td>
                                                 <?= $this->Html->link(
                                                     '',
-                                                    ['action' => 'view', $knowledgeTeacher->knowledge->id],
+                                                    ['controller' => 'knowledges','action' => 'view', $knowledgeTeacher->knowledge->id],
                                                     [
                                                         'title' => __('Visualizar'),
                                                         'class' => 'btn btn-sm btn-default glyphicon glyphicon-search',
