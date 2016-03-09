@@ -33,15 +33,9 @@ class ProcessesTable extends Table
         $this->hasMany('Clazzes', [
             'foreignKey' => 'process_id'
         ]);
-        $this->belongsToMany('ProcessConfigurations', [
-            'foreignKey' => 'process_id',
-            'targetForeignKey' => 'process_configuration_id',
-            'joinTable' => 'processes_process_configurations'
-        ]);
 		
-		$this->hasMany('ProcessesProcessConfigurations', [
-            'foreignKey' => 'process_id',
-            'propertyName' => 'processes_process_configurations'
+		$this->hasMany('ProcessConfigurations', [
+            'foreignKey' => 'process_id'
         ]);
     }
 
@@ -127,5 +121,28 @@ class ProcessesTable extends Table
             ->notEmpty('status');
 
         return $validator;
+    }
+
+    /**
+     * Finds Processes by filters
+     *
+     * @param $filters
+     * @return Query
+     */
+    public function findByFilters($filters)
+    {
+        /** @var Query $processes */
+        $processes = $this->find('all');
+
+        $conditions = [];
+        if(isset($filters) && is_array($filters)) {
+            if(isset($filters['name']) && !empty(trim($filters['name']))) {
+                $conditions['Processes.name LIKE'] = "%" . $filters['name'] . "%";
+            }
+        }
+
+        $processes->where($conditions);
+
+        return $processes;
     }
 }
